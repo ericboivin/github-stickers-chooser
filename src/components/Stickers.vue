@@ -4,7 +4,7 @@
     <p>Vous avez complété le devoir en entier avec succès. Vous pouvez choisir un autocollant GitHub.</p>
     <p>Dans le domaine du développement Internet, les autocollants sont très populaires, et ceux de GitHub en particulier sont très en demande! Ils nous en ont envoyé plusieurs différents en quantités limitées, alors réclamez votre autocollant. Si vous n'en désirez pas, vous pouvez quitter cette application!</p>
     <div class="wrapper">
-        <stickerArea v-for="sticker in stickers" :sticker="sticker" :key="sticker.id" @select="select"/>
+        <stickerArea v-for="sticker in stickers" :sticker="sticker" :key="sticker.id" @select="select" class="stickerbtn"/>
     </div>
     <modal v-show="isModalVisible" @close="closeModal" @confirm="confirmModal" :sticker="selectedSticker" />
   </div>
@@ -113,5 +113,9 @@ export default {
   .wrapper {
     grid-template-columns: 300px 300px 300px;
   }
+}
+
+.stickerbtn:hover {
+  cursor: pointer;
 }
 </style>
