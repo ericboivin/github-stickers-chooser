@@ -1,5 +1,7 @@
 <template>
-    <area alt="" :title="checkAvailable()? sticker.name : 'Épuisé'" shape="rect" v-on:click.self="select($event)" :coords="sticker.coords" :class="{notavailable : !checkAvailable()}"/>
+<div>
+  <img :src="sticker.url" width="300px" height="300px" :title="sticker.sticker" v-on:click.self="select($event)">
+</div>
 </template>
 
 <script>
@@ -10,7 +12,7 @@ export default {
   methods: {
     select (event) {
       if (this.checkAvailable()) {
-        this.$emit('select', this.sticker)
+        this.$emit('select', this)
       }
     },
     checkAvailable () {
@@ -21,7 +23,4 @@ export default {
 </script>
 
 <style scoped>
-  .notavailable{
-    cursor: no-drop;
-  }
 </style>

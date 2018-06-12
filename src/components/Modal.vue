@@ -16,7 +16,7 @@
 
         <section class="modal-body">
           <slot name="body">
-            Choix: {{sticker.name}}
+            Choix: {{sticker.sticker}}
           </slot>
         </section>
 

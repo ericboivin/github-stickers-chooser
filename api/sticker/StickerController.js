@@ -8,7 +8,7 @@ router.use(bodyParser.json());
 var Sticker = require('./Sticker');
 
 router.get('/', function (req, res) {
-    Sticker.find({}, function (err, stickers) {
+    Sticker.find({ quantity: { $gt: 0 } } , function (err, stickers) {
         if (err) return res.status(500).send("Problem encountered while returning the stickers");
         res.status(200).send(stickers);
     });

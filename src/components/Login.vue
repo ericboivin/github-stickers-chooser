@@ -25,7 +25,7 @@ export default {
     confirm () {
       var self = this
       this.setkey()
-      axios.get('/api/student/' + this.key)
+      axios.get('http://localhost:5000/api/student/' + this.key)
         .then(function (response) {
           self.$router.push('/stickers')
         })

@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 var StickerSchema  = new mongoose.Schema({
     name: String,
+    url: String,
     quantity: Number
 });
 
